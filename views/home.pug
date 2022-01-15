@@ -1,0 +1,10 @@
+html
+    head
+        title Home   
+    body
+        if users.session.loggedIn
+            include ./loggedInHeader
+            h3= "Welcome " + users.session.username + "!"
+        else
+            include ./loggedOutHeader
+        h1 Welcome to the Restaurants Page!

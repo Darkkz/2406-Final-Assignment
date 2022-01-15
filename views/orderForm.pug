@@ -1,0 +1,33 @@
+html
+    head
+        title Order Form
+        style(type="text/css").
+            .column{
+                float: left;
+            }
+
+            .left{
+                width: 10%;
+            }
+
+            .right{
+                width: 25%;
+            }
+
+            .middle{
+                width: 65%;
+            }
+
+    body(onload="init()")
+        include ./loggedInHeader
+        h3= "Welcome " + users.session.username + "!"
+        select(id="restaurant-select")
+        br
+        br
+        div#info
+        div#main
+            div(class="column left" id="left")
+            div(class="column middle" id="middle")
+            div(class="column right" id="right")
+
+        script(src="orderform.js")

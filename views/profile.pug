@@ -1,0 +1,31 @@
+html
+    head
+        title User Profile
+    body
+        if users.session.loggedIn
+            include ./loggedInHeader
+            h3= "Welcome " + users.session.username + "!"
+        else
+            include ./loggedOutHeader
+
+        div#main
+            if users.user.privacy == false || users.session.username == users.user.username
+                h1= "Name: " + users.user.username
+                h3= "Order Summary:"
+                each order in users.orders
+                    a(href="/orders/" + order._id) #{order._id}
+                    br
+                //- this is when the user is on their own page
+                if users.session.username == users.user.username
+                    h4= "Privacy:"
+                    input(type="radio" class="privacy" name="privacy" value="true")
+                    label(for="private") Private
+                    br
+                    input(type="radio" class="privacy" name="privacy" value="false")
+                    label(for="open") Open
+                    br
+                    br
+                    button(type="submit" id="submit") Save
+                    script(src="profile-client.js")
+            else
+                h1= "Private user."

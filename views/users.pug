@@ -1,0 +1,14 @@
+html
+    head
+        title Users
+    body
+        if users.session.loggedIn
+            include ./loggedInHeader
+            h3= "Welcome " + users.session.username + "!"
+        else
+            include ./loggedOutHeader
+
+        div#users
+            each user in users.users
+                a(href="/users/" + user._id) #{user.username}
+                br

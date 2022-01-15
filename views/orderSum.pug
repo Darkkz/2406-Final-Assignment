@@ -1,0 +1,18 @@
+html
+    head
+        title Order
+    body
+        if users.session.loggedIn
+            include ./loggedInHeader
+            h3= "Welcome " + users.session.username + "!"
+        else
+            include ./loggedOutHeader
+        h2= "Order Summary:"
+        h4= "Order placed by: " + users.user.username
+        h4= "From: " + users.order.order.restaurantName
+        each val, key in users.order.order.order
+            h4= val.name + " x" + val.quantity
+        
+        h4= "Tax: $" + users.order.order.tax.toFixed(2)
+        h4= "Delivery Fee: $" + users.order.order.fee.toFixed(2)
+        h4= "Total of order: $" + users.order.order.total.toFixed(2)

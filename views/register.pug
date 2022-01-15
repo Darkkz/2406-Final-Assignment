@@ -1,0 +1,15 @@
+html
+    head
+        title Sign Up!  
+    body
+        include ./loggedOutHeader
+        h1 Welcome!
+        label(for="username") Username:
+        input(type="text" id="username" required)
+        br
+        label(for="password") Password:
+        password: input(type="password" id="password" required)
+        br
+        button(type="submit" id="submit") Sign Up
+            
+        script(src="register-client.js")
