@@ -1,7 +1,7 @@
 # COMP 2406 Final Assignment
 This is the final assignment for the COMP 2406 Fundamentals of Web Applications course at Carleton University
 
-This Assignment is programmed in JavaScript using the Express.js framework. It is a restaurant application where users
+This Assignment is programmed in JavaScript using the Express.js framework and pug template engine. It is a restaurant application where users
 can register an account or sign into an existing account in the web app and can make orders to restaurants. The users can also view other users 
 profiles and see their order history. The user can also change their privacy setting which makes their account visible to other users or not
 visible to other users. The user profiles also store the particular users order history which is a link to the complete order and total cost.
